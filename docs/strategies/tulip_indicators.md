@@ -99,26 +99,27 @@ Here is a list of all supported indicators, click on them to see the required pa
 ## API
 
 ### ad
+[**Accumulation/Distribution Line**](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line) is a volume-based indicator designed to measure the cumulative money flow (in/out based on the total money flow).
 
-This indicator does not require any parameters.
+**_This indicator does not require any parameters._**
 
 ### adosc
+**Accumulation/Distribution Oscillator** also known as Chaikin Oscillator is calculated by subtracting a slow Accumulation Distribution Line period from a faster one.
 
-Required parameters:
-
+**_Required parameters:_**
  - optInFastPeriod
  - optInSlowPeriod
 
 ### adx
+[**Average Directional Movement Index**](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx) is a strength indicator for a trend, regardless of its direction. 
 
-Required parameters:
-
+**_Required parameters:_**
  - optInTimePeriod
 
 ### adxr
+[**Average Directional Movement Rating**](https://www.tradingview.com/script/pR7lfBFG-Average-Directional-Movement-Index-Rating/) is related to 'adx' but is an averaged version of this (t + t-(n-1))/2. 
 
-Required parameters:
-
+**_Required parameters:_**
  - optInTimePeriod
 
 ### ao
