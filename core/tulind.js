@@ -1,7 +1,7 @@
 var semver = require("semver");
 var _ = require('lodash');
 
-// validate that talib is installed, if not we'll throw an excepion which will
+// validate that talib is installed, if not we'll throw an exception which will
 // prevent further loading or out outside this module
 try {
     var tulind = require("tulind");
@@ -32,13 +32,15 @@ var verifyParams = (methodName, params) => {
     var requiredParams = methods[methodName].requires;
 
     _.each(requiredParams, paramName => {
-        if(!_.has(params, paramName))
-            throw tulindError + methodName + ' requires ' + paramName + '.';
+        if(!_.has(params, paramName)) {
+            throw new Error(tulindError + methodName + ' requires ' + paramName + '.');
+        }
 
         var val = params[paramName];
 
-        if(!_.isNumber(val))
-            throw tulindError + paramName + ' needs to be a number';
+        if(!_.isNumber(val)) {
+            throw new Error(tulindError + paramName + ' needs to be a number');
+        }
     });
 }
 
@@ -702,6 +704,20 @@ methods.sma = {
     }
 }
 
+methods.stddev = {
+    requires: ['optInTimePeriod'],
+    create: (params) => {
+        verifyParams('stddev', params);
+
+        return (data, callback) => execute(callback, {
+            indicator: tulind.indicators.stddev,
+            inputs: [data.close],
+            options: [params.optInTimePeriod],
+            results: ['result'],
+        });
+    }
+}
+
 methods.stoch = {
     requires: ['optInFastKPeriod', 'optInSlowKPeriod', 'optInSlowDPeriod'],
     create: (params) => {
@@ -711,7 +727,7 @@ methods.stoch = {
             indicator: tulind.indicators.stoch,
             inputs: [data.high, data.low, data.close],
             options: [params.optInFastKPeriod, params.optInSlowKPeriod, params.optInSlowDPeriod],
-            results: ['sotchK', 'stochD'],
+            results: ['stochK', 'stochD'],
         });
     }
 }
