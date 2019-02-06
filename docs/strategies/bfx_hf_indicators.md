@@ -19,7 +19,7 @@ There is a "DEMO_bfx-hf-indicators.js"-Strategy available which invokes every in
 
 ## HF Indicators
 
-As of version 1.0.2 of this package it contains 44 indicators.
+As of version 1.0.2 this package contains 44 indicators.
 
 - Absolute True Range
 - Acceleration
