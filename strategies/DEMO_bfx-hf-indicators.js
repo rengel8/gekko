@@ -80,7 +80,8 @@ var method = {};
 
 // prepare everything our method needs
 method.init = function() {
-	this.name = 'demo bfx-hf-indicators';
+	this.name = 'DEMO bfx-hf-indicators\n----------------------------------------------';	
+	console.log(this.name);
 
 	//INTERNAL EMA
 	//this.addIndicator('ema', 'EMA', this.settings.weight);
@@ -287,7 +288,7 @@ method.check = function(candle) {
 	//console.log("Envelope (upper|basis|lower): "+envelopeR['upper']+"\t"+envelopeR['basis']+"\t"+envelopeR['lower']);	//FINE
 	
 	var emaR			= this.emaBFX.v();										//Exponential Moving Average
-	//console.log("Exponential Moving Average: "+emaR);							//FINE
+	console.log("Exponential Moving Average: "+emaR);							//FINE
 	
 	var emaVolumeR		= this.emaVolumeBFX.v();								//EMA Volume	
 	//console.log("EMA Volume: "+emaVolumeR);										//FINE
