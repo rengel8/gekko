@@ -1,0 +1,7 @@
+# required package: npm i bfx-hf-indicators
+# use this strat only for reference! 
+
+ATR = 14
+Acceleration = 15
+AccumDist = 15
+ASI = 15
